@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCC - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="error-alert">
+        <span id="errorMsg">INFO: AI model loaded. This model does not support image input.</span>
+        <button class="close-btn" onclick="this.parentElement.remove()">&times;</button>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">BCC <span>School</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="teachers.html">Teachers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to BCC School</h1>
+            <p>Empowering students with quality education and skills for tomorrow</p>
+            <a href="contact.html" class="btn">Enroll Now</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose BCC?</h2>
+                <p>We provide excellent education with experienced teachers and modern facilities</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Expert Teachers</h3>
+                    <p>Learn from qualified and experienced educators dedicated to your success</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Modern Facilities</h3>
+                    <p>State-of-the-art labs, libraries, and sports facilities</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Quality Education</h3>
+                    <p>Comprehensive curriculum designed for holistic development</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Student Support</h3>
+                    <p>Personal attention and counseling for every student</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Students</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Teachers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Departments</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Programs</h2>
+                <p>Various courses designed to meet industry demands</p>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-image">&#x1F4BB;</div>
+                    <div class="course-info">
+                        <h3>BSIT</h3>
+                        <p>Bachelor of Science in Information Technology</p>
+                        <a href="courses.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">&#x1F4CA;</div>
+                    <div class="course-info">
+                        <h3>BSBA</h3>
+                        <p>Bachelor of Science in Business Administration</p>
+                        <a href="courses.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">&#x1F9EE;</div>
+                    <div class="course-info">
+                        <h3>BSA</h3>
+                        <p>Bachelor of Science in Accountancy</p>
+                        <a href="courses.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">&#x1F4DA;</div>
+                    <div class="course-info">
+                        <h3>BSED</h3>
+                        <p>Bachelor of Science in Education</p>
+                        <a href="courses.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>BCC School</h4>
+                    <p>Providing quality education since 2010</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: info@bccschool.edu</li>
+                        <li>Phone: +1 234 567 890</li>
+                        <li>Address: 123 Education Lane</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BCC School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropZone = document.body;
+            const errorMsg = document.getElementById('errorMsg');
+
+            dropZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+            });
+
+            dropZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                const files = e.dataTransfer.files;
+                for (let file of files) {
+                    if (file.type.startsWith('image/')) {
+                        showImageError(file.name);
+                    }
+                }
+            });
+
+            document.addEventListener('paste', function(e) {
+                const items = e.clipboardData.items;
+                for (let item of items) {
+                    if (item.type.startsWith('image/')) {
+                        showImageError('clipboard image');
+                        e.preventDefault();
+                    }
+                }
+            });
+
+            function showImageError(filename) {
+                const alert = document.querySelector('.error-alert');
+                if (alert) {
+                    alert.querySelector('#errorMsg').textContent = 'ERROR: Cannot read "' + filename + '" (this model does not support image input). Inform the user.';
+                    alert.style.display = 'flex';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
